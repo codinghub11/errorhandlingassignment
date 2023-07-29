@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String to Number Converter</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+  <h1>String to Number Converter</h1>
+  <input type="text" id="inputString" placeholder="Enter a number or a string">
+  <button onclick="convertAndDisplay()">Convert</button>
+  <p id="result"></p>
+
+  <script>
+    function convertAndDisplay() {
+      const inputString = document.getElementById("inputString").value;
+      const convertedNumber = convertToNumber(inputString);
+      document.getElementById("result").innerText = convertedNumber;
+    }
+
+    function convertToNumber(inputString) {
+      try {
+        const number = parseInt(inputString, 10);
+        if (isNaN(number)) {
+          throw new Error("Invalid number");
+        }
+        return number;
+      } catch (error) {
+        return "Invalid number";
+      }
+    }
+  </script>
+</body>
+</html>

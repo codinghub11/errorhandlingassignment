@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Person Information</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+  <div class="container">
+    <h1>Person Information</h1>
+    <form id="personForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+      <button type="button" onclick="displayPersonInfo()">Show Info</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function displayPersonInfo() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+
+      const personObj = { name: name, age: age };
+      const resultElement = document.getElementById("result");
+
+      try {
+        const personInfo = getPerson(personObj);
+        resultElement.innerText = personInfo;
+      } catch (error) {
+        resultElement.innerText = error.message;
+      }
+    }
+
+    function getPerson(personObj) {
+      if (typeof personObj !== 'object' || personObj === null || !('name' in personObj) || !('age' in personObj)) {
+        throw new Error("Invalid parameter type");
+      }
+
+      const name = personObj.name;
+      const age = personObj.age;
+
+      return `Name: ${name}, Age: ${age}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #de3f3f;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #007bff;
+  }
+  
+  p#carDescription {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+  }
+  

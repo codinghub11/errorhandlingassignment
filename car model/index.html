@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Description</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Car Description</h1>
+    <p id="carDescription"></p>
+  </div>
+
+  <script>
+    class Car {
+  constructor(company, model, year) {
+    this.company = company;
+    this.model = model;
+    this.year = year;
+  }
+
+  getDescription() {
+    return `This is a ${this.year} ${this.company} ${this.model}`;
+  }
+}
+
+const myCar = new Car('Toyota', 'Camry', 2023);
+const descriptionElement = document.getElementById('carDescription');
+descriptionElement.innerText = myCar.getDescription();
+
+  </script>
+</body>
+</html>
